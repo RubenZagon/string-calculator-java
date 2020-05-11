@@ -1,3 +1,5 @@
+import exceptions.NegativeNumbersNotAllowedException;
+
 import static java.lang.Integer.parseInt;
 
 public class StringCalculator {
@@ -37,6 +39,9 @@ public class StringCalculator {
         int result = 0;
         for (String value : stringNumbers) {
             if (!value.isEmpty()) {
+                if (parseInt(value.trim()) < 0) {
+                    throw new NegativeNumbersNotAllowedException("Negatives not allowed: " + value);
+                }
                 result += parseInt(value.replace("", " ").trim());
             }
         }

@@ -1,4 +1,5 @@
 
+import exceptions.NegativeNumbersNotAllowedException;
 import org.junit.Test;
 
 
@@ -40,9 +41,9 @@ public class StringCalculatorShould {
     }
 
 
-    @Test(expected = NegativeArraySizeException.class)
+    @Test(expected = NegativeNumbersNotAllowedException.class)
     public void throw_exception_if_found_negative_numbers() {
-        assertThat(StringCalculator.add("1,2,-3")).isEqualTo(6);
+        StringCalculator.add("1,2,-3");
     }
 
 }

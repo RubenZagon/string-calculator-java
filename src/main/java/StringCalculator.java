@@ -6,11 +6,22 @@ public class StringCalculator {
         //No need arguments
     }
 
-    public static Integer add(String text){
-        if (text.isEmpty()){
-        return 0;
+    public static Integer add(String text) {
+        if (text.isEmpty()) {
+            return 0;
         }
 
-        return parseInt(text);
+        if (!text.contains(",")) {
+            return parseInt(text);
+        }
+
+        int result = 0;
+        String[] splitText = text.split(",");
+        for (String value: splitText) {
+            result += parseInt(value.trim());
+        }
+
+
+        return result;
     }
 }

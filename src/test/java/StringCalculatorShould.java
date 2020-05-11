@@ -16,5 +16,11 @@ public class StringCalculatorShould {
         assertThat(StringCalculator.add("3")).isEqualTo(3);
     }
 
+    @Test
+    public void handle_an_unknown_amount_of_numbers(){
+        assertThat(StringCalculator.add("5,3")).isEqualTo(8);
+        assertThat(StringCalculator.add("3, 5, 7")).isEqualTo(15);
+    }
+
 
 }

@@ -15,9 +15,10 @@ public class StringCalculator {
             return parseInt(text);
         }
 
+        String[] stringNumbers = text.replaceAll("\n", ",")
+                                 .split(",");
         int result = 0;
-        String[] splitText = text.split(",");
-        for (String value: splitText) {
+        for (String value : stringNumbers) {
             result += parseInt(value.trim());
         }
 

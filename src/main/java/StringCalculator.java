@@ -13,7 +13,8 @@ public class StringCalculator {
             return 0;
         }
 
-        if (!text.contains(",") && !text.contains("//")) {
+        boolean isASimpleNumber = !text.contains(",") && !text.contains("//");
+        if (isASimpleNumber) {
             return parseInt(text.trim());
         }
 
@@ -32,20 +33,34 @@ public class StringCalculator {
     }
 
     private static Integer calculateWithDelimiters(String text, String delimiter) {
+        int maxRangeAllowed = 1000;
         String[] stringNumbers = text
                 .replace("/", delimiter)
                 .replace("\n", delimiter)
                 .split(delimiter);
         int result = 0;
         for (String value : stringNumbers) {
-            if (!value.isEmpty()) {
-                if (parseInt(value.trim()) < 0) {
-                    throw new NegativeNumbersNotAllowedException("Negatives not allowed: " + value);
+            try {
+                int parseValueToInt = parseInt(value.trim());
+
+                findNegativeNumbers(value, parseValueToInt);
+
+                boolean valueOnAllowRange = parseValueToInt <= maxRangeAllowed;
+                if (valueOnAllowRange) {
+                    result += parseValueToInt;
                 }
-                result += parseInt(value.replace("", " ").trim());
+            } catch (NumberFormatException ex) {
+                result += 0;
             }
         }
 
         return result;
+    }
+
+    private static void findNegativeNumbers(String value, int parseValueToInt) {
+        boolean negativeValue = parseValueToInt < 0;
+        if (negativeValue) {
+            throw new NegativeNumbersNotAllowedException("Negatives not allowed: " + value);
+        }
     }
 }

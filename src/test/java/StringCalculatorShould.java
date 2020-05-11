@@ -20,6 +20,10 @@ public class StringCalculatorShould {
     @Test
     public void handle_an_unknown_amount_of_numbers() {
         assertThat(StringCalculator.add("5,3")).isEqualTo(8);
+    }
+
+    @Test
+    public void handle_spaces() {
         assertThat(StringCalculator.add("3, 5, 7")).isEqualTo(15);
     }
 
@@ -44,6 +48,12 @@ public class StringCalculatorShould {
     @Test(expected = NegativeNumbersNotAllowedException.class)
     public void throw_exception_if_found_negative_numbers() {
         StringCalculator.add("1,2,-3");
+    }
+
+    @Test
+    public void ignore_big_numbers() {
+        assertThat(StringCalculator.add("1000, 3")).isEqualTo(1003);
+        assertThat(StringCalculator.add("2,1001")).isEqualTo(2);
     }
 
 }

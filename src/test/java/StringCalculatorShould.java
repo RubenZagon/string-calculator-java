@@ -40,4 +40,9 @@ public class StringCalculatorShould {
     }
 
 
+    @Test(expected = NegativeArraySizeException.class)
+    public void throw_exception_if_found_negative_numbers() {
+        assertThat(StringCalculator.add("1,2,-3")).isEqualTo(6);
+    }
+
 }

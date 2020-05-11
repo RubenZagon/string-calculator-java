@@ -17,23 +17,28 @@ public class StringCalculator {
 
         boolean foundCustomDelimiter = text.contains("//") && text.contains("\n");
         if (foundCustomDelimiter) {
-            String[] separateDelimiter = text.split("\n");
-            String customDelimiter = separateDelimiter[0].replace("/", "").trim();
-
-            String numbers = separateDelimiter[1];
-            return calculateWithDelimiters(numbers, customDelimiter);
+            String delimiter = findDelimiter(text);
+            return calculateWithDelimiters(text, delimiter);
         }
 
         return calculateWithDelimiters(text, ",");
     }
 
+    private static String findDelimiter(String text) {
+        String[] separateDelimiter = text.split("\n");
+        return separateDelimiter[0].replace("/", "").trim();
+    }
+
     private static Integer calculateWithDelimiters(String text, String delimiter) {
         String[] stringNumbers = text
-                .replaceAll("\n", delimiter)
+                .replace("/", delimiter)
+                .replace("\n", delimiter)
                 .split(delimiter);
         int result = 0;
         for (String value : stringNumbers) {
-            result += parseInt(value.trim());
+            if (!value.isEmpty()) {
+                result += parseInt(value.replace("", " ").trim());
+            }
         }
 
         return result;

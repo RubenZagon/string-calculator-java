@@ -1,5 +1,4 @@
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -28,7 +27,6 @@ public class StringCalculatorShould {
         assertThat(StringCalculator.add("1\n2,3")).isEqualTo(6);
     }
 
-    @Ignore
     @Test
     public void support_different_delimiters() {
         /*
@@ -37,7 +35,8 @@ public class StringCalculatorShould {
 
          */
 
-        assertThat(StringCalculator.add("5,3")).isEqualTo(8);
+        assertThat(StringCalculator.add("//;\n1;2")).isEqualTo(3);
+        assertThat(StringCalculator.add("//paco\n1paco2paco3")).isEqualTo(6);
     }
 
 

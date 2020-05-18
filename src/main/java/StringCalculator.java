@@ -13,19 +13,27 @@ public class StringCalculator {
             return 0;
         }
 
-        boolean isASimpleNumber = !text.contains(",") && !text.contains("//");
-        if (isASimpleNumber) {
+        if (isASimpleNumber(text)) {
             return parseInt(text.trim());
         }
 
-        boolean foundCustomDelimiter = text.contains("//") && text.contains("\n");
-        if (foundCustomDelimiter) {
+        if (foundCustomDelimiter(text)) {
             String delimiter = findDelimiter(text);
             return calculateWithDelimiters(text, delimiter);
         }
 
         return calculateWithDelimiters(text, ",");
+
     }
+
+    private static boolean foundCustomDelimiter(String text) {
+        return text.contains("//") && text.contains("\n");
+    }
+
+    private static boolean isASimpleNumber(String text) {
+        return !text.contains(",") && !text.contains("//");
+    }
+
 
     private static String findDelimiter(String text) {
         String[] separateDelimiter = text.split("\n");

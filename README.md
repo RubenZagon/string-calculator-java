@@ -58,3 +58,4 @@ Credits to [Roy Osherove](http://osherove.com/tdd-kata-1) for the original idea.
 And README from [xpeppers-repository](https://github.com/xpeppers/string-calculator-kata)
 
 A bug
+A bug

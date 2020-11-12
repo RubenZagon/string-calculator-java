@@ -65,6 +65,7 @@ A bug
 feature
 feature
 feature
+feature
 
 A bug
 A bug

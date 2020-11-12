@@ -60,6 +60,7 @@ And README from [xpeppers-repository](https://github.com/xpeppers/string-calcula
 A bug
 A bug
 A bug
+A bug
 
 feature
 feature

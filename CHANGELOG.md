@@ -18,10 +18,6 @@
 
 * [#3](https://github.com/RubenZagon/string-calculator-java/pull/3): ✨ Feature/readme 2
 
-#### Other Changes
-
-* [#5](https://github.com/RubenZagon/string-calculator-java/pull/5): Release 1.0.2
-
 
 # Version: 1.0.2
 

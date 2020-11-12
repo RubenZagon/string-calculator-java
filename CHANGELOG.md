@@ -1,3 +1,21 @@
+# Version: 1.0.6
+
+
+#### Bug Fixes
+
+
+* [#12](https://github.com/RubenZagon/string-calculator-java/pull/12): 🐞 matado el biso
+
+#### New Features
+
+
+* [#13](https://github.com/RubenZagon/string-calculator-java/pull/13): ✨ Feature 1.0.6
+
+#### Other Changes
+
+* [#11](https://github.com/RubenZagon/string-calculator-java/pull/11): Release 1.0.5
+
+
 # Version: 1.0.5
 
 

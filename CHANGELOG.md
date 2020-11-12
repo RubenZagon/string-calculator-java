@@ -1,3 +1,12 @@
+# Version: 1.0.7
+
+
+#### New Features
+
+
+* [#15](https://github.com/RubenZagon/string-calculator-java/pull/15): ✨ feature
+
+
 # Version: 1.0.6
 
 

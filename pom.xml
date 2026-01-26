@@ -23,8 +23,8 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <!-- use version 2.1.0 or higher -->
-            <version>2.1.0</version>
+            <!-- use version 3.27.7 or higher -->
+            <version>3.27.7</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
